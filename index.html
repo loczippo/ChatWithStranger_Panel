@@ -241,6 +241,7 @@ form button:hover {
 		<h1 id="loading" style="display:none; font-size:28px">Please wait...</h1>
 		
 		<form class="form">
+			<input type="text" placeholder="Host" id="host"></input>
 			<input type="password" placeholder="Password" id="pwd"></input>
 			<button type="submit" id="login-button">Login</button>
 		</form>
@@ -278,7 +279,7 @@ $("#login-button").click(function(event){
 			hash: CryptoJS.SHA256(time + "" + pwd).toString()
 		}
 		var token = CryptoJS.AES.encrypt(JSON.stringify(a), pwd).toString();
-		var host = 'afasdifasjdfi-asdf.herokuapp.com';
+		var host = $('#host').val().replace(/([\/]|https\:|http\:)/g, "");
 		$.ajax({
 			url: 'https://' + host + '/admin/auth',
 			method: 'post',
