@@ -170,7 +170,7 @@ a:hover {cursor:pointer}
 					}
 					$('#tguinfo').html("<b>ID: " + id +  '</b><br/>' + data.name +
 						'  (<i>' + (data.gender == 'male' ? "Nam" : "Nữ") + '</i>)<br/>' +
-						"<img style="border-radius: 50%" src=\"" + data.profile_pic + "\" width=\"100px\"/><br/>" +
+						"<img src=\"" + data.profile_pic + "\" width=\"100px\"/><br/>" +
 						"<button class=\"btn btn-danger\" onclick=\"removeUsr(" + id + ")\">End chat</button>");
 				},
 				function (xhr, ajaxOptions, thrownError) {
