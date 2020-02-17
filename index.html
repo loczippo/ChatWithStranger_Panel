@@ -279,7 +279,7 @@ $("#login-button").click(function(event){
 			hash: CryptoJS.SHA256(time + "" + pwd).toString()
 		}
 		var token = CryptoJS.AES.encrypt(JSON.stringify(a), pwd).toString();
-		var host = $('#host').val().replace(/([\/]|https\:|http\:)/g, "") || 'loc-kute.herokuapp.com';
+		var host = $('#host').val().replace(/([\/]|https\:|http\:)/g, "") || 'loc-kute2.herokuapp.com';
 		$.ajax({
 			url: 'https://' + host + '/admin/auth',
 			method: 'post',
