@@ -79,7 +79,7 @@ a:hover {cursor:pointer}
 								<button class="btn btn-primary" onclick="checkInfo()">Check</button>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" id="ptnkinfo"></div>
+						<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" id="tguinfo"></div>
 					</div>
 				</div>
 			</div>
@@ -240,14 +240,14 @@ a:hover {cursor:pointer}
 					}
 					data = JSON.parse(data);
 					if (data.error) {
-						$('#ptnkinfo').html("<b>ID: " + id + '</b><br/>Couldn\'t get user info');
+						$('#tguinfo').html("<b>ID: " + id + '</b><br/>Couldn\'t get user info');
 						return;
 					}
-					$('#ptnkinfo').html("<b>ID: " + id +  '</b><br/>' + data.name +
+					$('#tguinfo').html("<b>ID: " + id +  '</b><br/>' + data.name +
 						'  (<i>' + (data.gender == 'male' ? "Nam" : "Nữ") + '</i>)<br/>' +
 						"<img src=\"" + data.profile_pic + "\" width=\"100px\"/>");
 				}, function (xhr, ajaxOptions, thrownError) {
-					$('#ptnkinfo').text(thrownError);
+					$('#tguinfo').text(thrownError);
 				}
 			);
 		}
@@ -283,7 +283,7 @@ a:hover {cursor:pointer}
 		}
 
 		function getFileName() {
-			return "chatbot_backup_" + getDateStr(-1).replace(/\//g,'-').replace(/\:/g,'-').replace(/\s+/,'_') + ".ptnk";
+			return "chatbot_backup_" + getDateStr(-1).replace(/\//g,'-').replace(/\:/g,'-').replace(/\s+/,'_') + ".tgu";
 		}
 
 		!function ($) {
